@@ -3,8 +3,6 @@ import Chip from '../chip';
 import { IOptionInterface } from '../../types/common';
 
 import "./chipContainer.css";
-import classNames from 'classnames';
-
 
 function ChipContainer(props : IChipContainerProps) {
   const { width , options = [] , selectedOptions=[] , setSelectedOptions } = props;
@@ -90,7 +88,6 @@ function ChipContainer(props : IChipContainerProps) {
 
 interface IChipContainerProps {
     width?: string;
-    fontSize?: string;
     options?: IOptionInterface[];
     selectedOptions?: IOptionInterface[];
     setSelectedOptions: (selectedOptions: IOptionInterface[]) => void;

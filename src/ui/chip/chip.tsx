@@ -36,11 +36,8 @@ interface IChipProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     style?: React.CSSProperties;
     disabled?: boolean;
     closable?: boolean;
-    color?: string;
-    size?: string;
     prefix?: string;
     suffix?: string;
-    shape?: string;
     isHighlighted?: boolean;
 }
 

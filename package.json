@@ -16,7 +16,8 @@
     "random-avatar-generator": "^2.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^5.0.1"
+    "react-icons": "^5.0.1",
+    "storybook-addon-state": "^1.0.3"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.6.8",
