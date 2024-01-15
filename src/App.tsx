@@ -49,9 +49,8 @@ function App() {
   const [ selectedOptions , setSelectedOptions ] = useState<IOptionInterface[]>([]);
 
   return (
-    <div className='center'>
+    <div className='container'>
      <div className='info'>
-      <h1>Container chip</h1>
     <ul>
       <li>Click on Input to start typing </li>
       <li>Click on a suggestion or press enter </li>

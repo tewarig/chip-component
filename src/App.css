@@ -1,10 +1,16 @@
-.center{
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+.container{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     width: 99vw;
-    height: 98vh;
+    height: 90vh;
 }
 .info{
     display: flex;
