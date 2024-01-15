@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <ChipContainer
-       width="500px"    
+       width="1000px"    
       />
     </>
   )

@@ -3,6 +3,7 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-start;
+    flex-direction: row;
     padding: 0.5rem;
     border: none;
     border-bottom: 1px solid #ccc;
@@ -13,8 +14,84 @@
     box-sizing: border-box;
     cursor: text;
     transition: border-color 0.2s ease-in-out;
-    &:focus{
+    &:focus-within{
         border: none;
         border-bottom: 1px solid #1ea7fd;
     }
+}
+.chip-input{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border: none;
+    background-color: transparent;
+    height: 100%;
+    box-sizing: border-box;
+    cursor: text;
+    transition: background-color 0.2s ease-in-out;
+    
+   &:focus{
+    outline: none;
+   }
+}
+.chip-autocomplete{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    border: none;
+    background-color: #fff;
+    max-height: 200px;
+    width: 300px;
+    overflow: auto;
+    box-sizing: border-box;
+    cursor: text;
+    transition: background-color 0.2s ease-in-out;
+    position: absolute;
+    box-shadow: #ccc 0px 0px 0px 1px inset;
+}
+.chip-autocomplete-options{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    border: none;
+    background-color: transparent;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    gap: 4px;
+    width: 300px;
+}
+.chip-avatar{
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+    width: 2rem;
+    height: 2rem;
+}
+.chip-autocomplete-title{
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+    font-size: 0.8rem;
+    color: #333;
+    width: 100px; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+}
+.chip-autocomplete-value{
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+    font-size: 0.8rem;
+    color: #333;
+    width: 150px; 
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+.chip-autocomplete-avatar{
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
 }
