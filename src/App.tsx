@@ -11,19 +11,38 @@ const options = [{
 },
 {
   avatar: "http://www.gravatar.com/avatar/1?d=identicon",
-  title: "Gaurav Tewari",
+  title: "Sample",
   value: "sample@123.com",
 },  
 {
   avatar: "http://www.gravatar.com/avatar/2?d=identicon",
-  title: "Gaurav Tewari",
-  value: "mrow!@gmail.com",
+  title: "Macbook",
+  value: "macbook@gmail.com",
 },
 {
   avatar: "http://www.gravatar.com/avatar/3?d=identicon",
-  title: "Gaurav Tewari",
-  value: "233@gmail.com"
+  title: "demo",
+  value: "demo3@gmail.com"
 },
+{
+  avatar: "http://www.gravatar.com/avatar/4?d=identicon",
+  title: "Cool Stuff",
+  value: "coolStuff@gmail.com"
+},{
+  avatar: "http://www.gravatar.com/avatar/5?d=identicon",
+  title: "not so cool stuff",
+  value: "notsocoolstuff@gmail.com",
+},
+{
+  avatar: "http://www.gravatar.com/avatar/6?d=identicon",
+  title: "john doe",
+  value: "john@gmail.com",
+},
+{
+  avatar: "http://www.gravatar.com/avatar/7?d=identicon",
+  title: "Super man",
+  value: "Superman@gmail.com",
+}
 ];
 
 function App() {
