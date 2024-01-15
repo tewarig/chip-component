@@ -3,6 +3,7 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-start;
+    gap: 0.5rem;
     flex-direction: row;
     padding: 0.5rem;
     border: none;
@@ -35,6 +36,7 @@
    }
 }
 .chip-autocomplete{
+    margin-top: 10px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -49,6 +51,7 @@
     transition: background-color 0.2s ease-in-out;
     position: absolute;
     box-shadow: #ccc 0px 0px 0px 1px inset;
+    border-radius: 4px;
 }
 .chip-autocomplete-options{
     display: flex;
@@ -62,13 +65,12 @@
     transition: background-color 0.2s ease-in-out;
     gap: 4px;
     width: 300px;
+    padding: 8px 0px;
+    &:hover{
+        background-color: #d4d4d4;
+    }
 }
-.chip-avatar{
-    margin-right: 0.5rem;
-    margin-left: 0.5rem;
-    width: 2rem;
-    height: 2rem;
-}
+
 .chip-autocomplete-title{
     margin-right: 0.5rem;
     margin-left: 0.5rem;
@@ -95,3 +97,9 @@
     width: 1.5rem;
     height: 1.5rem;
 }
+/* .first-option{
+    border-top: 1px solid #ccc ;
+    border-left: 1px solid #ccc ;
+    border-right: 1px solid #ccc ;
+    background-color: #fafafa;
+} */

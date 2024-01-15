@@ -3,13 +3,15 @@
     align-items: center;
     justify-content: center;
     border: none;
-    border-radius: 0.5rem;
-    background-color: #eee;
+    border-radius: 5rem;
+    background-color: #e0e0e0;
+    color: #4a3d3d;
     box-sizing: border-box;
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
+    padding: 0px;
     &:hover{
-        background-color: #ccc;
+        background-color: #b2b2b2
     }
 }
 .chip-disabled{
@@ -44,13 +46,26 @@
     color: #333;
     cursor: pointer;
     transition: color 0.2s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     &:hover{
-        color: #1ea7fd;
+        color: #ca4a31;
     }
 }
 .chip-avatar{
     margin-right: 0.5rem;
-    margin-left: 0.5rem;
     width: 2rem;
     height: 2rem;
+    border-radius: 50%;
+}
+.chip-highlighted{
+    background-color: #1ea7fd;
+    color: #fff;
+    .chip-icon{
+        color: #fff;
+    }
+    .chip-close{
+        color: #fff;
+    }
 }

@@ -1,12 +1,15 @@
 import React from 'react';
 import classNames from 'classnames';
+import { IoMdClose } from "react-icons/io";
+
 import './chip.css';
 
-function Chip({ color , disabled ,style , onClick , onClose, avatar, title , closable , suffix, prefix, className ,children ,...props}: IChipProps) {
+function Chip({ color , disabled ,style , onClick , onClose, avatar, title , closable , suffix, prefix, className ,children , isHighlighted,...props}: IChipProps) {
   return (
     <button className={classNames('chip', {
         [`chip-${color}`]: color,
         'chip-disabled': disabled,
+        'chip-highlighted': isHighlighted,
      className
     })}
         style={style}
@@ -19,7 +22,7 @@ function Chip({ color , disabled ,style , onClick , onClose, avatar, title , clo
         {avatar && <img  className="chip-avatar" src={avatar} />}
         {title}
         {children}
-        {closable && <span className="chip-close" onClick={onClose}>x</span>}
+        {closable && <span className="chip-close" onClick={onClose}><IoMdClose/></span>}
         {suffix && <span className="chip-suffix">{suffix}</span>}
     </button>
   )
@@ -38,6 +41,7 @@ interface IChipProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     prefix?: string;
     suffix?: string;
     shape?: string;
+    isHighlighted?: boolean;
 }
 
 export default Chip;

@@ -16,7 +16,7 @@ const meta = {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} satisfies Meta<typeof Button>; 
+} satisfies Meta<typeof Button>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -47,12 +47,4 @@ export const Small: Story = {
     size: 'small',
     label: 'Button',
   },
-};
-
-export const Warning: Story = {
-  args: {
-    primary: true,
-    label: 'Delete now',
-    backgroundColor: 'red',
-  }
 };
