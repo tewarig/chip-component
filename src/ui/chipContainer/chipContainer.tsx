@@ -1,38 +1,20 @@
 import { useState , useRef } from 'react';
 import Chip from '../chip';
+import { IOptionInterface } from '../../types/common';
 
 import "./chipContainer.css";
 
 
 function ChipContainer(props : IChipContainerProps) {
-  const { width , fontSize } = props;
+  const { width , options = [] , selectedOptions , setSelectedOptions } = props;
   const [inputValue, setInputValue] = useState('');
   const [filteredOptions, setFilteredOptions] = useState<IOptionInterface[]>([]);
   const showFilteredOptions = inputValue && filteredOptions.length > 0;
 
-  const options = [{
-    avatar: "https://github.com/tewarig.png",
-    title: "Gaurav Tewari",
-    value: "gauravtewri111@gmail.com"
-  },
-{
-    avatar: "http://www.gravatar.com/avatar/1?d=identicon",
-    title: "Gaurav Tewari",
-    value: "sample@123.com",
-},  
-{
-    avatar: "http://www.gravatar.com/avatar/1?d=identicon",
-    title: "Gaurav Tewari",
-    value: "mrow!@gmail.com",
-},
-{
-    avatar: "http://www.gravatar.com/avatar/1?d=identicon",
-    title: "Gaurav Tewari",
-    value: "233@gmail.com"
-},
-];
   const handleSelect = (selectedOption: IOptionInterface) => {
-    console.log(`Selected: ${selectedOption}`);
+    setInputValue('');
+    setFilteredOptions([]);
+    setSelectedOptions([...(selectedOptions ?? []), selectedOption]);
   };
 
   const handleInputChange = (e : React.ChangeEvent<HTMLInputElement>) => {
@@ -41,11 +23,16 @@ function ChipContainer(props : IChipContainerProps) {
 
     // Filter options based on input value
     const filteredOptions = options.filter(option =>
-      option.value.toLowerCase().includes(inputValue.toLowerCase())
+      option.value.toLowerCase().includes(inputValue.toLowerCase())&&selectedOptions?.every(o => o.value !== option.value)
     );
 
     setFilteredOptions(filteredOptions);
   };
+
+  const handleClose = (option: IOptionInterface) => {
+    //value is the email address so it will be always unique
+    setSelectedOptions(selectedOptions?.filter(o => o.value !== option.value) ?? []);
+    };
     const childComponent = useRef<HTMLInputElement>(null);
     const focusInput = () => {
         childComponent.current?.focus();
@@ -53,13 +40,13 @@ function ChipContainer(props : IChipContainerProps) {
 
   return (
     <div className='chip-container' style={{ width }} onClick={focusInput}>
-     <Chip title="dummy chip"
-     avatar="https://github.com/tewarig.png"
+    {selectedOptions && selectedOptions.map((option, index) => (
+    <Chip title={option.title} key={index}
+     avatar={option.avatar}
      closable={true}
-     onClose={()=>{
-        console.log('close')
-     }}
+     onClose={() => handleClose(option)}
      />
+     ))}
      <div className="chip-input-container">
     <input type="text" className="chip-input" aria-label='chip-container'  ref={childComponent} 
         value={inputValue}
@@ -80,14 +67,12 @@ function ChipContainer(props : IChipContainerProps) {
 }
 
 
-interface IOptionInterface {
-    avatar?: string;
-    title: string;
-    value: string;
-}
 
 interface IChipContainerProps {
     width?: string;
     fontSize?: string;
+    options?: IOptionInterface[];
+    selectedOptions?: IOptionInterface[];
+    setSelectedOptions: (selectedOptions: IOptionInterface[]) => void;
 }
 export default ChipContainer
