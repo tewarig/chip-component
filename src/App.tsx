@@ -49,14 +49,24 @@ function App() {
   const [ selectedOptions , setSelectedOptions ] = useState<IOptionInterface[]>([]);
 
   return (
-    <>
+    <div className='center'>
+     <div className='info'>
+      <h1>Container chip</h1>
+    <ul>
+      <li>Click on Input to start typing </li>
+      <li>Click on a suggestion or press enter </li>
+      <li>press Backspace 2 time to remove last selected element </li>
+      <li>press Ecs to remove a selected element </li>
+      <li>For more info refer to Story Book Link </li>
+    </ul>
+    </div>
       <ChipContainer
-       width="1000px"
+       width="70%"
        options={options}
        selectedOptions={selectedOptions}
        setSelectedOptions={setSelectedOptions}
       />
-    </>
+    </div>
   )
 }
 

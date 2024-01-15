@@ -45,7 +45,7 @@
     background-color: #fff;
     max-height: 200px;
     width: 320px;
-    overflow-y: scroll;
+    overflow-y: auto;
     box-sizing: border-box;
     cursor: text;
     transition: background-color 0.2s ease-in-out;
@@ -53,15 +53,12 @@
     box-shadow: #ccc 0px 0px 0px 1px inset;
     border-radius: 4px;  
 }
-.chip-autocomplete::-webkit-scrollbar {
-    width: 12px;               /* width of the entire scrollbar */
-}
 .chip-autocomplete::-webkit-scrollbar-track {
-    background: rgb(236, 236, 236);        /* color of the tracking area */
+    background: rgb(236, 236, 236);       
 }
 .chip-autocomplete::-webkit-scrollbar-thumb {
-    background-color: rgb(220, 220, 220);    /* color of the scroll thumb */
-    border-radius: 20px;       /* roundness of the scroll thumb */
+    background-color: rgb(220, 220, 220);    
+    border-radius: 20px;       
     border: 3px solid rgb(197, 183, 183);  /* creates padding around scroll thumb */
   }
 .chip-autocomplete-options{
