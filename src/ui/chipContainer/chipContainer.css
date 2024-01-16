@@ -138,3 +138,19 @@
 .chip-autocomplete-options:hover {
     background-color: #f5f5f5;
 }
+@media only screen and (max-width: 1000px) {
+    /* place here CSS for when the screen is less than 1000px wide */
+    .chip-autocomplete{
+        width: 300px;
+    }
+    .chip-autocomplete-title {
+        width: 100px;
+        font-size: 14px;
+        font-weight: 400px;
+    }
+    .chip-autocomplete-value{
+        width: 100px;
+        font-size: 14px;
+        font-weight: 400px;
+    }
+  }
