@@ -17,8 +17,10 @@ function App() {
       <li>Click on Input to start typing </li>
       <li>Click on a suggestion or press enter </li>
       <li>press Backspace 2 time to remove last selected element </li>
-      <li>press Ecs to remove a selected element </li>
-      <li>For more info refer to Story Book Link </li>
+      <li> use arrow keys to navigate  left(⬅️) right(➡️)  to highlighted text</li>
+      <li> use arrow keys to navigate  up(⬆️)  down(⬇️)  in autocomplete options</li>
+
+      {/* <li>press Ecs to remove a selected element </li> */}
     </ul>
     </div>
       <ChipContainer
