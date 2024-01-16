@@ -39,6 +39,9 @@ body{
   background: rgb(211,155,255);
   background: linear-gradient(180deg, rgba(211,155,255,1) 35%, rgb(249, 219, 246) 100%);
   font-size: 24px;
+  font-weight: 500;
+  border-radius: 50px;
+  font-family: Poppins,sans-serif;
   gap: 2rem;
 }
 .invite {

@@ -40,6 +40,7 @@ function App() {
         options={options}
         selectedOptions={selectedOptions}
         setSelectedOptions={setSelectedOptions}
+        placeholder="Invite your friends"
       />
       <button className="invite" onClick={handleButtonClick}> Invite </button>
       </div>

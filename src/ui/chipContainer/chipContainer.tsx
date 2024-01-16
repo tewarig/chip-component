@@ -11,6 +11,7 @@ function ChipContainer(props: IChipContainerProps) {
     options = [],
     selectedOptions = [],
     setSelectedOptions,
+    placeholder,
   } = props;
   const optionContainerRef = useRef<HTMLDivElement | null>();
   const [inputValue, setInputValue] = useState("");
@@ -121,6 +122,7 @@ function ChipContainer(props: IChipContainerProps) {
           value={inputValue}
           onChange={handleInputChange}
           onKeyDown={handleKeyDown}
+          placeholder={selectedOptions.length === 0 ?  placeholder : ""}
         />
         <div
           className="chip-autocomplete"
@@ -157,5 +159,6 @@ interface IChipContainerProps {
   options?: IOptionInterface[];
   selectedOptions?: IOptionInterface[];
   setSelectedOptions: (selectedOptions: IOptionInterface[]) => void;
+  placeholder?: string;
 }
 export default ChipContainer;
