@@ -10,6 +10,10 @@
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
     padding: 0px;
+    font-family: Poppins,sans-serif;
+    font-size: 26px;
+    line-height: 50px;
+    font-weight: 600;
 
     &:hover {
         background-color: #b2b2b2
@@ -65,8 +69,8 @@
 
 .chip-avatar {
     margin-right: 0.5rem;
-    width: 2rem;
-    height: 2rem;
+    width: 3rem;
+    height: 3ch;
     border-radius: 50%;
 }
 

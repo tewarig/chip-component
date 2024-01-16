@@ -9,33 +9,42 @@ function App() {
   const [selectedOptions, setSelectedOptions] = useState<IOptionInterface[]>(
     []
   );
+  const handleButtonClick = () => {
+    if(selectedOptions.length > 0){
+      alert("Opps! you are not allowed to use Zepto pro. please reach out to gauravtewari111@gmail.com ;)")
+    }else {
+      alert(
+        "Sharing is caring. please share this link with your friends to get access to Zepto Pro. "
+      )
+    }
+  }
 
   return (
+    <>
+    <div className="header"> Zepto Pro  </div>
     <div className="container">
-      <div className="info">
-        <ul>
-          <li>Click on Input to start typing </li>
-          <li>Click on a suggestion or press enter </li>
-          <li>press Backspace 2 time to remove last selected element </li>
-          <li>
-            {" "}
-            use arrow keys to navigate left(⬅️) right(➡️) to highlighted text
-          </li>
-          <li>
-            {" "}
-            use arrow keys to navigate up(⬆️) down(⬇️) in autocomplete options
-          </li>
-
-          {/* <li>press Ecs to remove a selected element </li> */}
-        </ul>
-      </div>
+      <div className="card">
+        Hi 👋, <br/>
+        you are invited to a cool demo of Zepto Pro. <br/>
+        now delivering the best experience. 
+        plus groceries. <br/>
+        sorry <br/>
+        groceries,fruits,vegetables, personal care, electronics & much more to you in just secs. <br/>
+        yes, you heard it right. <br/>
+        <br/>
+        get all you need delivered right to your doorstep. <br/>
+        faster then ever. <br/>
+        invite all your friends now :)
       <ChipContainer
-        width="70%"
+        width="100%"
         options={options}
         selectedOptions={selectedOptions}
         setSelectedOptions={setSelectedOptions}
       />
+      <button className="invite" onClick={handleButtonClick}> Invite </button>
+      </div>
     </div>
+    </>
   );
 }
 

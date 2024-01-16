@@ -11,7 +11,7 @@
 
     background-color: #fff;
     width: 100%;
-    min-height: 3rem;
+    min-height: 5rem;
     box-sizing: border-box;
     cursor: text;
     transition: border-color 0.2s ease-in-out;
@@ -20,6 +20,8 @@
         border: none;
         border-bottom: 1px solid #1ea7fd;
     }
+    border-radius: 8px;
+    
 }
 
 .chip-input {
@@ -32,6 +34,10 @@
     box-sizing: border-box;
     cursor: text;
     transition: background-color 0.2s ease-in-out;
+    font-family: Poppins,sans-serif;
+    font-size: 26px;
+    line-height: 50px;
+    font-weight: 600;
 
     &:focus {
         outline: none;
@@ -47,7 +53,7 @@
     border: none;
     background-color: #fff;
     max-height: 200px;
-    width: 320px;
+    width: 500px;
     overflow-y: auto;
     box-sizing: border-box;
     cursor: text;
@@ -92,10 +98,14 @@
     margin-left: 0.5rem;
     font-size: 0.8rem;
     color: #333;
-    width: 100px;
+    width: 200px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-family: Poppins,sans-serif;
+    font-size: 26px;
+    line-height: 50px;
+    font-weight: 600;
 }
 
 .chip-autocomplete-value {
@@ -103,17 +113,22 @@
     margin-left: 0.5rem;
     font-size: 0.8rem;
     color: #333;
-    width: 150px;
+    width: 200px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-family: Poppins,sans-serif;
+    font-size: 26px;
+    line-height: 50px;
+    font-weight: 600;
 }
 
 .chip-autocomplete-avatar {
     margin-right: 0.5rem;
     margin-left: 0.5rem;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
 }
 
 .chip-autocomplete-options-selected {
