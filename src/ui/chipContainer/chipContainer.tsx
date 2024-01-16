@@ -1,9 +1,9 @@
 import { useState , useRef } from 'react';
+import classNames from 'classnames';
 import Chip from '../chip';
 import { IOptionInterface } from '../../types/common';
 
 import "./chipContainer.css";
-import classNames from 'classnames';
 
 function ChipContainer(props : IChipContainerProps) {
   const { width , options = [] , selectedOptions=[] , setSelectedOptions } = props;
@@ -82,12 +82,11 @@ function ChipContainer(props : IChipContainerProps) {
     }
 
 
-
   return (
     <div className='chip-container' style={{ width }} onClick={focusInput}>
     {selectedOptions && selectedOptions.map((option, index) => (
     <Chip 
-     title={option.title}
+     title={option.title ?? ""}
      key={index}
      isHighlighted={index === highlightedIndex}
      avatar={option.avatar}
