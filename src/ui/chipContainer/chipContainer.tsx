@@ -3,12 +3,15 @@ import Chip from '../chip';
 import { IOptionInterface } from '../../types/common';
 
 import "./chipContainer.css";
+import classNames from 'classnames';
 
 function ChipContainer(props : IChipContainerProps) {
   const { width , options = [] , selectedOptions=[] , setSelectedOptions } = props;
+  const optionContainerRef = useRef<HTMLDivElement | null>();
   const [inputValue, setInputValue] = useState('');
   const [filteredOptions, setFilteredOptions] = useState<IOptionInterface[]>([]);
   const [highlightedIndex, setHighlightedIndex] = useState<number>(-1);
+  const [selectedFilteredOptionIndex, setSelectedFilteredOptionIndex] = useState<number>(0);
   const showFilteredOptions = inputValue && filteredOptions.length > 0;
 
   const handleSelect = (selectedOption: IOptionInterface) => {
@@ -41,7 +44,7 @@ function ChipContainer(props : IChipContainerProps) {
 
     const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter'&&filteredOptions.length>0) {
-            handleSelect(filteredOptions[0]);
+            handleSelect(filteredOptions[selectedFilteredOptionIndex]);
         }
         if(e.key === 'Backspace' && !inputValue && highlightedIndex === -1){
             setHighlightedIndex(selectedOptions?.length - 1 ?? -1);
@@ -50,7 +53,34 @@ function ChipContainer(props : IChipContainerProps) {
             handleClose(selectedOptions[highlightedIndex]);
             setHighlightedIndex(-1);
         }
+        if(e.key === 'ArrowLeft' && highlightedIndex > -1){
+            setHighlightedIndex(highlightedIndex - 1);
+        }
+        if(e.key === 'ArrowRight' && highlightedIndex < selectedOptions?.length - 1){
+            setHighlightedIndex(highlightedIndex + 1);
+        }
+        if(e.key === 'ArrowUp' && selectedFilteredOptionIndex > 0){
+            setSelectedFilteredOptionIndex(selectedFilteredOptionIndex - 1);
+            if(optionContainerRef.current){
+               const element = optionContainerRef.current;
+               element.scrollTo({
+                top: element.scrollTop - 36,
+                behavior: 'smooth',
+              });
+            } 
+        }
+        if(e.key === 'ArrowDown' && selectedFilteredOptionIndex < filteredOptions.length - 1){
+            setSelectedFilteredOptionIndex(selectedFilteredOptionIndex + 1);
+            if(optionContainerRef.current){
+              const element = optionContainerRef.current;
+              element.scrollTo({
+                top: element.scrollTop + 36,
+                behavior: 'smooth',
+              });
+           } 
+        }
     }
+
 
 
   return (
@@ -70,9 +100,11 @@ function ChipContainer(props : IChipContainerProps) {
         value={inputValue}
         onChange={handleInputChange}
         onKeyDown={handleKeyDown} />
-    <div className='chip-autocomplete'>
+    <div className='chip-autocomplete' ref={optionContainerRef as React.RefObject<HTMLDivElement>}>
         {showFilteredOptions &&filteredOptions.map((option, index) => (
-          <button className={"chip-autocomplete-options"} key={index}  onClick={() => handleSelect(option)} >
+          <button className={classNames("chip-autocomplete-options",{
+            "chip-autocomplete-options-selected": index === selectedFilteredOptionIndex,
+          })} key={index}  onClick={() => handleSelect(option)} >
             {option.avatar && <img className="chip-autocomplete-avatar" src={option.avatar} />}
             <span className="chip-autocomplete-title">{option.title} </span> 
              <span className="chip-autocomplete-value"> {option.value}</span>
