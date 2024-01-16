@@ -59,3 +59,15 @@ body{
     color: #fff;
   }
 }
+.pill{
+  background-color: #f54149;
+  background-image: linear-gradient(170deg,#f04,#ff794d);
+  padding: 8px 16px;
+  color: #e9e9e9;
+  font-size: 26px;
+  line-height: 50px;
+  font-weight: 600;
+  border-radius: 50px;
+  font-family: Poppins,sans-serif;
+  border: none;
+}

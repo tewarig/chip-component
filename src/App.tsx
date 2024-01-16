@@ -21,7 +21,7 @@ function App() {
 
   return (
     <>
-    <div className="header"> Zepto Pro  </div>
+    <div className="header"> Zepto <span className="pill">Pro</span>  </div>
     <div className="container">
       <div className="card">
         Hi 👋, <br/>
